@@ -1,0 +1,14 @@
+.navbar {
+  background-color: #696969;
+}
+
+.app-title {
+  font-size: 1.5em;
+  text-align: left;
+}
+
+.login-button {
+  border: 2px solid black;
+  border-radius: 4px;
+  float: right;
+}
