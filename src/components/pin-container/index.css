@@ -1,0 +1,5 @@
+.pin-container {
+  display: grid;
+  grid-template-columns: repeat(5, 20%);
+  grid-template-rows: repeat(5, 100px);
+}
