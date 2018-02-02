@@ -9,6 +9,11 @@ class PinContainer extends Component {
     return (
       <div className="pin-container">
         <Pin />
+        <Pin />
+        <Pin />
+        <Pin />
+        <Pin />
+        <Pin />
         <NewPinPopup />
       </div>
     );

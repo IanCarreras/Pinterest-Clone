@@ -6,11 +6,11 @@ class Pin extends Component {
     return (
       <div className="pin">
 
-        <div>image block here</div>
+        <div className="pin-image">image block</div>
 
-        <div>text about image block here</div>
+        <div className="pin-title">image title</div>
 
-        <div>block for avatar and star button</div>
+        <div className="avatar-block">block for avatar and star button</div>
 
       </div>
     );
