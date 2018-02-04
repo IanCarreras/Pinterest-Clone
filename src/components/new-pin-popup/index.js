@@ -5,7 +5,8 @@ class NewPinPopup extends Component {
   render() {
     return (
       <div className="pin">
-
+        <button className="close-button">X</button>
+        
         <h2>image block here</h2>
 
         <h3>Title</h3>
