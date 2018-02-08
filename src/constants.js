@@ -1,0 +1,1 @@
+export const INITIAL_IMAGES = 'INITIAL_IMAGES'
