@@ -1,19 +1,15 @@
 import React, { Component } from 'react'
 
-import Pin from '../pin/'
-import NewPinPopup from '../new-pin-popup/'
+import NewPinPopup from '../new-pin-popup'
+import renderPins from '../render-pins'
+
 import './index.css'
 
 class PinContainer extends Component {
   render() {
     return (
       <div className="pin-container">
-        <Pin />
-        <Pin />
-        <Pin />
-        <Pin />
-        <Pin />
-        <Pin />
+        {renderPins(this.props.images)}
         <NewPinPopup />
       </div>
     );

@@ -3,12 +3,11 @@ import {
   INITIAL_IMAGES
 } from '../constants'
 
-export default (state, action) => {
+export default (state = [], action) => {
   switch (action.type) {
     case INITIAL_IMAGES:
-      
-      break;
+      return action.images;
     default:
-
+      return state;
   }
 }

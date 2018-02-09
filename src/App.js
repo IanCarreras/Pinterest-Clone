@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-
+import { bindActionCreators } from 'redux'
+import actionCreators from './actions'
 import axios from 'axios'
 
 import NavBar from './components/navbar/'
@@ -12,7 +13,7 @@ class App extends Component {
   componentWillMount() {
     axios.get('http://localhost:3030/images')
     .then( ({ data }) => {
-      this.props.actions.initialImages(data.images)
+      this.props.actions.initialImages(data)
     })
   }
 
@@ -31,5 +32,9 @@ const mapStateToProps = ({ images }) => {
   return { images }
 }
 
+const mapDispatchToProps = (dispatch) => {
+  return { actions: bindActionCreators(actionCreators, dispatch)}
+}
 
-export default connect(mapStateToProps)(App);
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);
