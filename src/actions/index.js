@@ -1,6 +1,7 @@
 import axios from 'axios'
 import {
-  INITIAL_IMAGES
+  INITIAL_IMAGES,
+  DELETE_IMAGE
 } from '../constants'
 
 const initialImages = (images) => {
@@ -10,6 +11,14 @@ const initialImages = (images) => {
   }
 }
 
+const deleteImage = (image) => {
+  return {
+    type: DELETE_IMAGE,
+    image
+  }
+}
+
 export default {
-  initialImages
+  initialImages,
+  deleteImage
 }

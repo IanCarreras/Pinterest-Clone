@@ -1,9 +1,10 @@
 import React from 'react'
 
-const renderPins = (images) => {
-  return images.map( (image) => {
+const renderPins = (images, actions) => {
+  return images.map( (image, i) => {
     return (
-      <div className="pin">
+      <div key={i} className="pin">
+        <button className="close-button" onClick={actions.deleteImage}>X</button>
 
         <div className="pin-image">image block</div>
 

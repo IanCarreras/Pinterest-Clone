@@ -18,11 +18,14 @@ class App extends Component {
   }
 
   render() {
-    const { images } = this.props
+    const { images, actions } = this.props
     return (
       <div className="App">
         <NavBar />
-        <PinContainer images={images}/>
+        <PinContainer
+          images={images}
+          actions={actions}
+        />
       </div>
     );
   }

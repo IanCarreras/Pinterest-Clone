@@ -7,7 +7,7 @@ body {
 .pin {
   border: 3px solid black;
   border-radius: 4px;
-  height: 250px;
+  height: 260px;
   width: 250px;
   padding-left: 10px;
   padding-right: 10px;
@@ -16,22 +16,33 @@ body {
   margin-right: auto;
 }
 
+.close-button {
+  position: relative;
+  float: right;
+  top: 3px;
+  right: -6px;
+}
+
+.close-button:hover {
+  cursor: pointer;
+}
+
 .pin-image {
   border: 1px solid black;
   position: relative;
-  top: 15px;
+  top: 23px;
   height: 9em;
 }
 
 .pin-title {
   border: 1px solid black;
   position: relative;
-  top: 20px;
+  top: 30px;
 }
 
 .avatar-block {
   border: 1px solid black;
   position: relative;
-  top: 35px;
+  top: 40px;
   height: 2em;
 }
