@@ -4,6 +4,8 @@ import {
   DELETE_IMAGE
 } from '../constants'
 
+const BASE_URL = 'http://localhost:3030';
+
 const initialImages = (images) => {
   return {
     type: INITIAL_IMAGES,
@@ -11,10 +13,17 @@ const initialImages = (images) => {
   }
 }
 
-const deleteImage = (image) => {
-  return {
-    type: DELETE_IMAGE,
-    image
+const deleteImage = (id) => {
+  return (dispatch) => {
+    axios.delete(`${BASE_URL}/delete`, { data: { id } })
+    .then(({ status }) => {
+      if (status === 200) {
+        dispatch({
+          type: DELETE_IMAGE,
+          id
+        })
+      }
+    })
   }
 }
 

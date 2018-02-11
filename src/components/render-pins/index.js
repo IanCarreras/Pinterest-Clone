@@ -4,7 +4,7 @@ const renderPins = (images, actions) => {
   return images.map( (image, i) => {
     return (
       <div key={i} className="pin">
-        <button className="close-button" onClick={actions.deleteImage}>X</button>
+        <button className="close-button" onClick={() => actions.deleteImage(image._id)}>X</button>
 
         <div className="pin-image">image block</div>
 

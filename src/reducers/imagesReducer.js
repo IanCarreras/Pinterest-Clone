@@ -9,7 +9,7 @@ export default (state = [], action) => {
     case INITIAL_IMAGES:
       return action.images;
     case DELETE_IMAGE:
-      return action.image
+      return state.filter((current) => current._id !== action.id)
     default:
       return state;
   }

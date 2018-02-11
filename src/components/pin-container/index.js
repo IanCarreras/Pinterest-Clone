@@ -10,7 +10,9 @@ class PinContainer extends Component {
     return (
       <div className="pin-container">
         {renderPins(this.props.images, this.props.actions)}
-        <NewPinPopup />
+        <NewPinPopup
+          actions={this.props.actions}
+        />
       </div>
     );
   }
