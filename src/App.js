@@ -11,10 +11,7 @@ import './App.css'
 
 class App extends Component {
   componentWillMount() {
-    axios.get('http://localhost:3030/images')
-    .then( ({ data }) => {
-      this.props.actions.initialImages(data)
-    })
+    this.props.actions.initialImages()
   }
 
   render() {

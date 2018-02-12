@@ -5,13 +5,19 @@ class NewPinPopup extends Component {
     super(props);
     this.state = {
       title: '',
-      link: ''
+      url: ''
     }
     this.handleChange = this.handleChange.bind(this)
+    this.handleSubmit = this.handleSubmit.bind(this)
   }
 
   handleChange(e) {
     this.setState({ [e.target.name]: e.target.value })
+  }
+
+  handleSubmit() {
+    const { title, url } = this.state
+    this.props.actions.addImage(title, url)
   }
 
   render() {
@@ -27,14 +33,14 @@ class NewPinPopup extends Component {
           value={this.state.title}
         />
 
-        <h3>Source (http link)</h3>
+        <h3>Source (http url)</h3>
         <input
-          name="link"
+          name="url"
           onChange={this.handleChange}
-          value={this.state.link}
+          value={this.state.url}
         />
 
-        <button>Ok</button>
+        <button onClick={this.handleSubmit}>Ok</button>
         <button>Cancel</button>
 
       </div>

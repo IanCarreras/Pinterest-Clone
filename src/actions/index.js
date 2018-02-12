@@ -1,15 +1,22 @@
 import axios from 'axios'
 import {
   INITIAL_IMAGES,
-  DELETE_IMAGE
+  DELETE_IMAGE,
+  ADD_IMAGE,
 } from '../constants'
 
 const BASE_URL = 'http://localhost:3030';
 
-const initialImages = (images) => {
-  return {
-    type: INITIAL_IMAGES,
-    images
+
+const initialImages = () => {
+  return (dispatch) => {
+    axios.get('http://localhost:3030/images')
+    .then( ({ data }) => {
+      dispatch({
+        type: INITIAL_IMAGES,
+        data
+      })
+    })
   }
 }
 
@@ -27,7 +34,20 @@ const deleteImage = (id) => {
   }
 }
 
+const addImage = (title, url) => {
+  return (dispatch) => {
+    axios.post(`${BASE_URL}/add`, { title, url } )
+    .then(({ data }) => {
+        dispatch({
+          type: ADD_IMAGE,
+          data
+        })
+    })
+  }
+}
+
 export default {
   initialImages,
-  deleteImage
+  deleteImage,
+  addImage
 }
