@@ -4,8 +4,9 @@ import { bindActionCreators } from 'redux'
 import actionCreators from './actions'
 import axios from 'axios'
 
-import NavBar from './components/navbar/'
-import PinContainer from './components/pin-container/'
+import NavBar from './components/navbar'
+import PinContainer from './components/pin-container'
+import NewPinPopup from './components/new-pin-popup'
 import './App.css'
 
 
@@ -18,18 +19,26 @@ class App extends Component {
     const { images, actions } = this.props
     return (
       <div className="App">
-        <NavBar />
+        <NavBar
+          actions={actions}
+        />
         <PinContainer
           images={images}
           actions={actions}
         />
+        {this.props.showPopUp
+          ? <NewPinPopup
+            actions={this.props.actions}
+          />
+          : null
+        }
       </div>
     );
   }
 }
 
-const mapStateToProps = ({ images }) => {
-  return { images }
+const mapStateToProps = ({ images, showPopUp }) => {
+  return { images, showPopUp }
 }
 
 const mapDispatchToProps = (dispatch) => {

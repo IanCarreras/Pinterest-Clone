@@ -8,7 +8,7 @@ class NavBar extends Component {
       <div className="navbar">
         <SocialIcon className="pinterest-icon" network="pinterest" style={{ height: 25, width: 25 }} />
         <h1 className="app-title">Pinterest Clone</h1>
-        <button className="add-pin-button">ADD</button>
+        <button className="add-pin-button" onClick={this.props.actions.togglePopup}>ADD</button>
         <button className="login-button"><SocialIcon network="twitter" style={{ height: 25, width: 25 }} /> Login</button>
       </div>
     );

@@ -3,6 +3,7 @@ import {
   INITIAL_IMAGES,
   DELETE_IMAGE,
   ADD_IMAGE,
+  TOGGLE_POPUP
 } from '../constants'
 
 const BASE_URL = 'http://localhost:3030';
@@ -46,8 +47,15 @@ const addImage = (title, url) => {
   }
 }
 
+const togglePopup = () => {
+  return {
+    type: TOGGLE_POPUP 
+  }
+}
+
 export default {
   initialImages,
   deleteImage,
-  addImage
+  addImage,
+  togglePopup
 }

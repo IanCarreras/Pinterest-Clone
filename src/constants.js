@@ -1,3 +1,4 @@
 export const INITIAL_IMAGES = 'INITIAL_IMAGES'
 export const DELETE_IMAGE = 'DELETE_IMAGE'
 export const ADD_IMAGE = 'ADD_IMAGE'
+export const TOGGLE_POPUP = 'TOGGLE_POPUP'

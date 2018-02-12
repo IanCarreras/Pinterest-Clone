@@ -41,7 +41,7 @@ class NewPinPopup extends Component {
         />
 
         <button onClick={this.handleSubmit}>Ok</button>
-        <button>Cancel</button>
+        <button onClick={this.props.actions.togglePopup}>Cancel</button>
 
       </div>
     );
