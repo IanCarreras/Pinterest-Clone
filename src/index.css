@@ -15,6 +15,7 @@ body {
   margin-left: auto;
   margin-right: auto;
   background-color: white;
+  box-shadow: 2px 3px #A9A9A9;
 }
 
 .close-button {
