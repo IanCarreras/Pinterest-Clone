@@ -15,7 +15,7 @@ export default (state = [], action) => {
       return state.filter((current) => current._id !== action.id);
     case ADD_IMAGE:
     newState = _.cloneDeep(state)
-    newState.push(action.data)  
+    newState.push(action.data)
       return newState;
     default:
       return state;

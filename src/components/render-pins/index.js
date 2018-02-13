@@ -6,7 +6,7 @@ const renderPins = (images, actions) => {
       <div key={i} className="pin">
         <button className="close-button" onClick={() => actions.deleteImage(image._id)}>X</button>
 
-        <div className="pin-image">image block</div>
+        <img className="pin-image" src={image.url}></img>
 
         <div className="pin-title">{image.title}</div>
 

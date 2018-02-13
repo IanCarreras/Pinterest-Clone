@@ -3,4 +3,7 @@
   flex-wrap: wrap;
   flex-direction: row;
   justify-content: flex-start;
+  background-color: rgb(115, 111, 111);
+  height: 100vh;
+  margin-top: -7px;
 }

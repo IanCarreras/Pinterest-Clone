@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 
 class NewPinPopup extends Component {
   constructor(props) {
@@ -18,31 +18,32 @@ class NewPinPopup extends Component {
   handleSubmit() {
     const { title, url } = this.state
     this.props.actions.addImage(title, url)
+    this.props.actions.togglePopup()
   }
 
   render() {
     return (
-      <div className="pin">
+      <div className="popup-pin">
+        <div className="popup-inner">
+          <img className="pin-image" src={this.state.url}></img>
 
-        <h2>image block here</h2>
+          <h3>Title</h3>
+          <input
+            name="title"
+            onChange={this.handleChange}
+            value={this.state.title}
+          />
 
-        <h3>Title</h3>
-        <input
-          name="title"
-          onChange={this.handleChange}
-          value={this.state.title}
-        />
+          <h3>Source (http url)</h3>
+          <input
+            name="url"
+            onChange={this.handleChange}
+            value={this.state.url}
+          />
 
-        <h3>Source (http url)</h3>
-        <input
-          name="url"
-          onChange={this.handleChange}
-          value={this.state.url}
-        />
-
-        <button onClick={this.handleSubmit}>Ok</button>
-        <button onClick={this.props.actions.togglePopup}>Cancel</button>
-
+          <button onClick={this.handleSubmit}>Ok</button>
+          <button onClick={this.props.actions.togglePopup}>Cancel</button>
+        </div>
       </div>
     );
   }
