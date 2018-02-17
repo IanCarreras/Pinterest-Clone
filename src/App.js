@@ -3,12 +3,14 @@ import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import actionCreators from './actions'
 import axios from 'axios'
+import AuthService from './lib/authService';
 
 import NavBar from './components/navbar'
 import PinContainer from './components/pin-container'
 import NewPinPopup from './components/new-pin-popup'
 import './App.css'
 
+const auth = new AuthService('M5mR8gceNB6uUm7XgdTPXI0JzgSQ7jwx', 'fretzila.auth0.com');
 
 class App extends Component {
   componentWillMount() {
@@ -19,19 +21,9 @@ class App extends Component {
     const { images, actions } = this.props
     return (
       <div className="App">
-        <NavBar
-          actions={actions}
-        />
-        <PinContainer
-          images={images}
-          actions={actions}
-        />
-        {this.props.showPopUp
-          ? <NewPinPopup
-            actions={this.props.actions}
-          />
-          : null
-        }
+        <NavBar actions={actions} auth={auth} />
+        <PinContainer images={images} actions={actions} auth={auth} />
+        {this.props.showPopUp && <NewPinPopup actions={this.props.actions} auth={auth} />}
       </div>
     );
   }
