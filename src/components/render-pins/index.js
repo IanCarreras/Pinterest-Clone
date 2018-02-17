@@ -1,4 +1,6 @@
 import React from 'react'
+import ReactImageFallback from 'react-image-fallback'
+import fallbackImage from './backup.jpg'
 
 const renderPins = (images, actions) => {
   return images.map( (image, i) => {
@@ -6,7 +8,12 @@ const renderPins = (images, actions) => {
       <div key={i} className="pin">
         <button className="close-button" onClick={() => actions.deleteImage(image._id)}>X</button>
 
-        <img className="pin-image" src={image.url}></img>
+        <ReactImageFallback
+          src={image.url}
+          fallbackImage={fallbackImage}
+          alt="you shouldn't be seeing this"
+          className="pin-image"
+        />
 
         <div className="pin-title">{image.title}</div>
 
@@ -18,3 +25,10 @@ const renderPins = (images, actions) => {
 }
 
 export default renderPins
+
+// <ReactImageFallback
+//   src={image.url}
+//   fallbackImage="./backup.jpg"
+//   alt="you shouldn't be seeing this"
+//   className="pin-image"
+// />
