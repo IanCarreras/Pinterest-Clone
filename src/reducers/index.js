@@ -2,9 +2,10 @@ import { combineReducers } from 'redux'
 
 import images from './imagesReducer'
 import showPopUp from './toggleReducer'
+import auth from './authReducer'
 
 const rootReducer = combineReducers({
-  auth: (state = '') => state,
+  auth,
   images,
   showPopUp
 })

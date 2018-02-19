@@ -25,10 +25,3 @@ const renderPins = (images, actions) => {
 }
 
 export default renderPins
-
-// <ReactImageFallback
-//   src={image.url}
-//   fallbackImage="./backup.jpg"
-//   alt="you shouldn't be seeing this"
-//   className="pin-image"
-// />

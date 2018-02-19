@@ -25,7 +25,7 @@ export default class AuthService {
   }
 
   setToken(authObject) {
-    console.log(authObject);
+    console.log(authObject)
     localStorage.setItem('id_token', authObject.idToken)
   }
 

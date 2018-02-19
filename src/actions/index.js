@@ -43,15 +43,19 @@ const addImage = (title, url) => {
           type: ADD_IMAGE,
           data
         })
+        dispatch({
+          type: TOGGLE_POPUP
+        })
     })
   }
 }
 
 const togglePopup = () => {
   return {
-    type: TOGGLE_POPUP 
+    type: TOGGLE_POPUP
   }
 }
+
 
 export default {
   initialImages,

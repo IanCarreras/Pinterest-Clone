@@ -18,14 +18,13 @@ class NewPinPopup extends Component {
   handleSubmit() {
     const { title, url } = this.state
     this.props.actions.addImage(title, url)
-    this.props.actions.togglePopup()
   }
 
   render() {
     return (
       <div className="popup-pin">
         <div className="popup-inner">
-          <img className="pin-image" src={this.state.url}></img>
+          <img className="pin-image" src={this.state.url} alt="insert url"></img>
 
           <h3>Title</h3>
           <input

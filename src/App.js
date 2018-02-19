@@ -2,15 +2,11 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import actionCreators from './actions'
-import axios from 'axios'
-import AuthService from './lib/authService';
 
 import NavBar from './components/navbar'
 import PinContainer from './components/pin-container'
 import NewPinPopup from './components/new-pin-popup'
 import './App.css'
-
-const auth = new AuthService('M5mR8gceNB6uUm7XgdTPXI0JzgSQ7jwx', 'fretzila.auth0.com');
 
 class App extends Component {
   componentWillMount() {
@@ -18,7 +14,7 @@ class App extends Component {
   }
 
   render() {
-    const { images, actions } = this.props
+    const { images, actions, auth } = this.props
     return (
       <div className="App">
         <NavBar actions={actions} auth={auth} />
@@ -29,8 +25,8 @@ class App extends Component {
   }
 }
 
-const mapStateToProps = ({ images, showPopUp }) => {
-  return { images, showPopUp }
+const mapStateToProps = ({ images, showPopUp, auth }) => {
+  return { images, showPopUp, auth }
 }
 
 const mapDispatchToProps = (dispatch) => {
