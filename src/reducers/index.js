@@ -2,14 +2,14 @@ import { combineReducers } from 'redux'
 
 import imagesReducer from './imagesReducer'
 import showPopUpReducer from './toggleReducer'
-import loggedInReducer from './loggedInReducer'
+import changeAuthReducer from './changeAuthReducer'
 import authReducer from './authReducer'
 
 const rootReducer = combineReducers({
-  authReducer,
-  imagesReducer,
-  showPopUpReducer,
-  loggedInReducer
+  auth: authReducer,
+  images: imagesReducer,
+  showPopUp: showPopUpReducer,
+  loggedIn: changeAuthReducer
 })
 
 export default rootReducer

@@ -13,10 +13,10 @@ class NavBar extends Component {
 
         {loggedIn
         ?
-          <button className="log-button" onClick={auth.logout}>Logout</button>
+          <button className="log-button" onClick={() => actions.changeAuth(auth, false)}>Logout</button>
 
         :
-          <button className="log-button" onClick={() => actions.loggedIn(auth)}>
+          <button className="log-button" onClick={() => actions.changeAuth(auth, true)}>
             <SocialIcon network="twitter" style={{ height: 25, width: 25 }} /> Login
           </button>
         }

@@ -4,7 +4,7 @@ import {
   DELETE_IMAGE,
   ADD_IMAGE,
   TOGGLE_POPUP,
-  LOGGED_IN
+  CHANGE_AUTH
 } from '../constants'
 
 const BASE_URL = 'http://localhost:3030';
@@ -57,10 +57,11 @@ const togglePopup = () => {
   }
 }
 
-const loggedIn = (status) => {
+const changeAuth = (auth, status) => {
 
   return {
-    type: LOGGED_IN,
+    type: CHANGE_AUTH,
+    auth,
     status
   }
 }
@@ -71,5 +72,5 @@ export default {
   deleteImage,
   addImage,
   togglePopup,
-  loggedIn
+  changeAuth
 }
