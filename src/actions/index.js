@@ -3,7 +3,8 @@ import {
   INITIAL_IMAGES,
   DELETE_IMAGE,
   ADD_IMAGE,
-  TOGGLE_POPUP
+  TOGGLE_POPUP,
+  LOGGED_IN
 } from '../constants'
 
 const BASE_URL = 'http://localhost:3030';
@@ -56,10 +57,19 @@ const togglePopup = () => {
   }
 }
 
+const loggedIn = (status) => {
+
+  return {
+    type: LOGGED_IN,
+    status
+  }
+}
+
 
 export default {
   initialImages,
   deleteImage,
   addImage,
-  togglePopup
+  togglePopup,
+  loggedIn
 }

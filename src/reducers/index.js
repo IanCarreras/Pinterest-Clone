@@ -1,13 +1,15 @@
 import { combineReducers } from 'redux'
 
-import images from './imagesReducer'
-import showPopUp from './toggleReducer'
-import auth from './authReducer'
+import imagesReducer from './imagesReducer'
+import showPopUpReducer from './toggleReducer'
+import loggedInReducer from './loggedInReducer'
+import authReducer from './authReducer'
 
 const rootReducer = combineReducers({
-  auth,
-  images,
-  showPopUp
+  authReducer,
+  imagesReducer,
+  showPopUpReducer,
+  loggedInReducer
 })
 
 export default rootReducer
