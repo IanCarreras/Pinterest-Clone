@@ -15,10 +15,10 @@ class App extends Component {
   }
 
   render() {
-    const { images, actions, auth, loggedIn } = this.props
+    const { images, actions, auth } = this.props
     return (
       <div className="App">
-        <NavBar actions={actions} auth={auth} loggedIn={loggedIn} />
+        <NavBar actions={actions} auth={auth} />
         <PinContainer images={images} actions={actions} auth={auth} />
         {this.props.showPopUp && <NewPinPopup actions={this.props.actions} auth={auth} />}
       </div>
@@ -26,8 +26,8 @@ class App extends Component {
   }
 }
 
-const mapStateToProps = ({ images, showPopUp, auth, loggedIn }) => {
-  return { images, showPopUp, auth, loggedIn }
+const mapStateToProps = ({ images, showPopUp, auth }) => {
+  return { images, showPopUp, auth }
 }
 
 const mapDispatchToProps = (dispatch) => {

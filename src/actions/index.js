@@ -4,7 +4,7 @@ import {
   DELETE_IMAGE,
   ADD_IMAGE,
   TOGGLE_POPUP,
-  CHANGE_AUTH
+  CHANGE_STATUS
 } from '../constants'
 
 const BASE_URL = 'http://localhost:3030';
@@ -57,20 +57,17 @@ const togglePopup = () => {
   }
 }
 
-const changeAuth = (auth, status) => {
-
+const changeStatus = (nextStatus) => {
   return {
-    type: CHANGE_AUTH,
-    auth,
-    status
+    type: CHANGE_STATUS,
+    payload: nextStatus
   }
 }
-
 
 export default {
   initialImages,
   deleteImage,
   addImage,
   togglePopup,
-  changeAuth
+  changeStatus
 }

@@ -10,7 +10,7 @@ import './index.css';
 import App from './App';
 
 const createStoreWitheMiddleware = applyMiddleware(reduxThunk, logger)(createStore)
-const store = createStoreWitheMiddleware(rootReducer,
+export const store = createStoreWitheMiddleware(rootReducer,
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 )
 

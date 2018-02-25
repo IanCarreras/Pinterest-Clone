@@ -3,20 +3,35 @@ import { SocialIcon } from 'react-social-icons'
 import './index.css'
 
 class NavBar extends Component {
+  constructor(props) {
+    super(props);
+
+    this.handleLogin = this.handleLogin.bind(this);
+    this.handleLogout = this.handleLogout.bind(this);
+  }
+
+  handleLogin() {
+    this.props.auth.login();
+  }
+
+  handleLogout() {
+    this.props.auth.logout();
+  }
+
   render() {
-    const { actions, auth, loggedIn } = this.props
+    const { actions, auth } = this.props
     return (
       <div className="navbar">
         <SocialIcon className="pinterest-icon" network="pinterest" style={{ height: 25, width: 25 }} />
         <h1 className="app-title">Pinterest Clone</h1>
         <button className="add-pin-button" onClick={actions.togglePopup}>ADD</button>
 
-        {loggedIn
+        {auth.isLoggedIn
         ?
-          <button className="log-button" onClick={() => actions.changeAuth(auth, false)}>Logout</button>
+          <button className="log-button" onClick={this.handleLogout}>Logout</button>
 
         :
-          <button className="log-button" onClick={() => actions.changeAuth(auth, true)}>
+          <button className="log-button" onClick={this.handleLogin}>
             <SocialIcon network="twitter" style={{ height: 25, width: 25 }} /> Login
           </button>
         }

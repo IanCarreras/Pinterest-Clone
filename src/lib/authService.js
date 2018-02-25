@@ -1,4 +1,5 @@
 import Auth0Lock from 'auth0-lock'
+import { store } from '../index';
 
 export default class AuthService {
   constructor(clientId, domain) {
@@ -14,6 +15,10 @@ export default class AuthService {
 
   _doAuthentication(authResult) {
     this.setToken(authResult)
+    store.dispatch({
+      type: 'CHANGE_STATUS',
+      payload: true
+    })
   }
 
   login() {
@@ -25,7 +30,6 @@ export default class AuthService {
   }
 
   setToken(authObject) {
-    console.log(authObject)
     localStorage.setItem('id_token', authObject.idToken)
   }
 
@@ -35,5 +39,9 @@ export default class AuthService {
 
   logout() {
     localStorage.removeItem('id_token')
+    store.dispatch({
+      type: 'CHANGE_STATUS',
+      payload: false
+    })
   }
 }
