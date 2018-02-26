@@ -2,11 +2,11 @@ import React from 'react'
 import ReactImageFallback from 'react-image-fallback'
 import fallbackImage from './backup.jpg'
 
-const renderPins = (images, actions) => {
+const renderPins = (images, actions, auth) => {
   return images.map( (image, i) => {
     return (
       <div key={i} className="pin">
-        <button className="close-button" onClick={() => actions.deleteImage(image._id)}>X</button>
+        {auth.isLoggedIn && <button className="close-button" onClick={() => actions.deleteImage(image._id)}>X</button>}
 
         <ReactImageFallback
           src={image.url}
@@ -16,8 +16,6 @@ const renderPins = (images, actions) => {
         />
 
         <div className="pin-title">{image.title}</div>
-
-        <div className="avatar-block">block for avatar and star button</div>
 
       </div>
     )

@@ -30,23 +30,16 @@ body {
 }
 
 .pin-image {
-  margin-top: 25px;
+  margin-top: 30px;
   margin-left: auto;
   margin-right: auto;
-  height: 8.8em;
+  height: 9em;
 }
 
 .pin-title {
   border: 1px solid black;
   position: relative;
-  top: 5px;
-}
-
-.avatar-block {
-  border: 1px solid black;
-  position: relative;
-  top: 10px;
-  height: 2em;
+  top: 15px;
 }
 
 .popup-pin {

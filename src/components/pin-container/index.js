@@ -8,7 +8,7 @@ class PinContainer extends Component {
   render() {
     return (
       <div className="pin-container">
-        {renderPins(this.props.images, this.props.actions)}
+        {renderPins(this.props.images, this.props.actions, this.props.auth)}
       </div>
     );
   }

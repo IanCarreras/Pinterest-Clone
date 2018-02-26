@@ -24,7 +24,7 @@ class NavBar extends Component {
       <div className="navbar">
         <SocialIcon className="pinterest-icon" network="pinterest" style={{ height: 25, width: 25 }} />
         <h1 className="app-title">Pinterest Clone</h1>
-        <button className="add-pin-button" onClick={actions.togglePopup}>ADD</button>
+        {auth.isLoggedIn && <button className="add-pin-button" onClick={actions.togglePopup}>ADD</button>}
 
         {auth.isLoggedIn
         ?
