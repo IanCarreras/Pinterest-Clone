@@ -12,7 +12,7 @@ const BASE_URL = 'http://localhost:3030';
 
 const initialImages = () => {
   return (dispatch) => {
-    axios.get('http://localhost:3030/images')
+    axios.get(`${BASE_URL}/images`)
     .then( ({ data }) => {
       dispatch({
         type: INITIAL_IMAGES,
@@ -24,7 +24,7 @@ const initialImages = () => {
 
 const deleteImage = (id) => {
   return (dispatch) => {
-    axios.delete(`${BASE_URL}/delete`, { data: { id } })
+    axios.delete(`${BASE_URL}/image/${id}`, { data: { id } })
     .then(({ status }) => {
       if (status === 200) {
         dispatch({
@@ -38,7 +38,7 @@ const deleteImage = (id) => {
 
 const addImage = (title, url) => {
   return (dispatch) => {
-    axios.post(`${BASE_URL}/add`, { title, url } )
+    axios.post(`${BASE_URL}/image`, { title, url } )
     .then(({ data }) => {
         dispatch({
           type: ADD_IMAGE,
