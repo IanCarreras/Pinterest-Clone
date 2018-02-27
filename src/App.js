@@ -5,7 +5,6 @@ import actionCreators from './actions'
 
 import NavBar from './components/navbar'
 import PinContainer from './components/pin-container'
-import NewPinPopup from './components/new-pin-popup'
 import './App.css'
 
 class App extends Component {
@@ -20,7 +19,6 @@ class App extends Component {
       <div className="App">
         <NavBar actions={actions} auth={auth} />
         <PinContainer images={images} actions={actions} auth={auth} />
-        {this.props.showPopUp && <NewPinPopup actions={this.props.actions} auth={auth} />}
       </div>
     );
   }

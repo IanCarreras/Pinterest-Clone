@@ -13,7 +13,7 @@ export default (state = auth, action) => {
 
   switch (action.type) {
     case CHANGE_STATUS:
-      const newState = _.cloneDeep(state)
+      newState = _.cloneDeep(state)
       newState.isLoggedIn = action.payload
       return newState;
     default:
