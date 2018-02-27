@@ -3,6 +3,7 @@ import {
   INITIAL_IMAGES,
   DELETE_IMAGE,
   ADD_IMAGE,
+  TOGGLE_POPUP,
   CHANGE_STATUS
 } from '../constants'
 
@@ -50,6 +51,12 @@ const addImage = (title, url) => {
   }
 }
 
+const togglePopup = () => {
+  return {
+    type: TOGGLE_POPUP
+  }
+}
+
 const changeStatus = (nextStatus) => {
   return {
     type: CHANGE_STATUS,
@@ -61,5 +68,6 @@ export default {
   initialImages,
   deleteImage,
   addImage,
+  togglePopup,
   changeStatus
 }
