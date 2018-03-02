@@ -31,9 +31,7 @@ class NavBar extends Component {
           <button className="log-button" onClick={this.handleLogout}>Logout</button>
 
         :
-          <button className="log-button" onClick={this.handleLogin}>
-            <SocialIcon network="twitter" style={{ height: 25, width: 25 }} /> Login
-          </button>
+          <button className="log-button" onClick={this.handleLogin}>Login</button>
         }
       </div>
     );
